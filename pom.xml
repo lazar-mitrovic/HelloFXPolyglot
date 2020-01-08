@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <javafx.version>14-ea+4</javafx.version>
+        <javafx.version>13.0.1</javafx.version>
         <graalvm.version>19.3.0</graalvm.version>
         <mainClassName>Hello.Main</mainClassName>
     </properties>
@@ -69,7 +69,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <release>11</release>
                 </configuration>
@@ -87,13 +87,10 @@
             <plugin>
                 <groupId>com.gluonhq</groupId>
                 <artifactId>client-maven-plugin</artifactId>
-                <version>0.1.10-SNAPSHOT</version>
+                <version>0.1.12-SNAPSHOT</version>
                 <configuration>
                     <!-- Uncomment to run on android: -->
-                    <!--
                     <target>android</target>
-                    <javafxStaticSdkVersion>14-ea+gvm3</javafxStaticSdkVersion>
-                    -->
                     <nativeImageArgs>
                         <list>--language:js</list>
                         <list>-Dtruffle.TruffleRuntime=com.oracle.truffle.api.impl.DefaultTruffleRuntime</list>
