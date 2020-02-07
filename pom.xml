@@ -35,7 +35,7 @@
             <artifactId>truffle-api</artifactId>
             <version>SYSTEM</version>
             <scope>system</scope>
-            <systemPath>${java.home}/lib/truffle/truffle-api.jar</systemPath>
+            <systemPath>${env.GRAALVM_HOME}/lib/truffle/truffle-api.jar</systemPath>
         </dependency>
     </dependencies>
 
