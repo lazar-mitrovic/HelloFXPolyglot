@@ -13,22 +13,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <javafx.version>13.0.1</javafx.version>
-        <graalvm.version>19.3.0</graalvm.version>
+        <javafx.version>14-ea+7</javafx.version>
+        <graalvm.version>19.3.0.2</graalvm.version>
+        <client.version>0.1.16-SNAPSHOT</client.version>
         <mainClassName>Hello.Main</mainClassName>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -57,13 +48,6 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>Gluon</id>
-            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
-        </repository>
-    </repositories>
-
     <build>
         <plugins>
             <plugin>
@@ -87,10 +71,13 @@
             <plugin>
                 <groupId>com.gluonhq</groupId>
                 <artifactId>client-maven-plugin</artifactId>
-                <version>0.1.12-SNAPSHOT</version>
+                <version>${client.version}</version>
                 <configuration>
                     <!-- Uncomment to run on android: -->
+                    <!-- 
                     <target>android</target>
+                    <javafxStaticSdkVersion>14-ea+gvmandroidkeyboard</javafxStaticSdkVersion>
+                    -->
                     <nativeImageArgs>
                         <list>--language:js</list>
                         <list>-Dtruffle.TruffleRuntime=com.oracle.truffle.api.impl.DefaultTruffleRuntime</list>
@@ -106,11 +93,11 @@
     <pluginRepositories>
         <pluginRepository>
             <id>gluon-releases</id>
-            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
+            <url>http://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
         </pluginRepository>
         <pluginRepository>
-            <id>gluon-public-snapshots</id>
-            <url>https://nexus.gluonhq.com/nexus/content/repositories/public-snapshots/</url>
+            <id>gluon-snapshots</id>
+            <url>https://nexus.gluonhq.com/nexus/content/repositories/public-snapshots</url>
         </pluginRepository>
     </pluginRepositories>
 </project>
